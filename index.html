@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>  <!-- JavaScript linked -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+              import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+              import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+              const firebaseConfig = {
+                  apiKey: "AIzaSyA7rb5LL58W1EUDuVo4qzWJP2XUom6aob8",
+                  authDomain: "srms-e4e88.firebaseapp.com",
+                  projectId: "srms-e4e88",
+                  storageBucket: "srms-e4e88.firebasestorage.app",
+                  messagingSenderId: "940348562380",
+                  appId: "1:940348562380:web:be2a812ee34c3cc5ab1b69",
+                  measurementId: "G-H7M2D9KS5J"
+              };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>  <!-- JavaScript linked -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 Student Management System</h1>
+        
+        <div class="menu">
+            <button onclick="showSection('addStudent')">➕ Add Student</button>
+            <button onclick="showSection('viewStudents')">📋 View Students</button>
+            <button onclick="showSection('searchStudent')">🔍 Search Student</button>
+            <button onclick="showSection('updateStudent')">✏️ Update Student</button>
+            <button onclick="showSection('deleteStudent')">❌ Delete Student</button>
+        </div>
+
+        <!-- Add Student Section (Default Visible) -->
+        <div id="addStudent" class="section active">
+            <h2>Add Student</h2>
+            <div class="card">
+                <input type="text" placeholder="Student ID">
+                <input type="text" placeholder="Name">
+                <input type="number" placeholder="Age">
+                <input type="text" placeholder="Grade">
+                <button>Add Student</button>
+            </div>
+        </div>
+
+        <!-- View Students Section -->
+        <div id="viewStudents" class="section">
+            <h2>All Students</h2>
+            <div class="card">
+                <ul>
+                    <li>No students found.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Search Student Section -->
+        <div id="searchStudent" class="section">
+            <h2>Search Student</h2>
+            <div class="card">
+                <input type="text" placeholder="Enter Student ID">
+                <button>Search</button>
+                <p>No results found.</p>
+            </div>
+        </div>
+
+        <!-- Update Student Section -->
+        <div id="updateStudent" class="section">
+            <h2>Update Student</h2>
+            <div class="card">
+                <input type="text" placeholder="Enter Student ID">
+                <input type="text" placeholder="New Name">
+                <input type="number" placeholder="New Age">
+                <input type="text" placeholder="New Grade">
+                <button>Update</button>
+            </div>
+        </div>
+
+        <!-- Delete Student Section -->
+        <div id="deleteStudent" class="section">
+            <h2>Delete Student</h2>
+            <div class="card">
+                <input type="text" placeholder="Enter Student ID">
+                <button>Delete</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
